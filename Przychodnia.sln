@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Przychodnia", "Przychodnia\Przychodnia.csproj", "{2377353D-5B0C-494C-991E-E602548A9732}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyControl", "Controls\MyControl.csproj", "{974B7801-6825-410E-B73C-E97D799FEF0E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2377353D-5B0C-494C-991E-E602548A9732}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2377353D-5B0C-494C-991E-E602548A9732}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2377353D-5B0C-494C-991E-E602548A9732}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2377353D-5B0C-494C-991E-E602548A9732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{974B7801-6825-410E-B73C-E97D799FEF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{974B7801-6825-410E-B73C-E97D799FEF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{974B7801-6825-410E-B73C-E97D799FEF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{974B7801-6825-410E-B73C-E97D799FEF0E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1743D76C-3479-4453-8DCB-6599EAF42F9E}
+	EndGlobalSection
+EndGlobal

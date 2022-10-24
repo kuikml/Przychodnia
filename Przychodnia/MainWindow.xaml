@@ -1,0 +1,70 @@
+﻿<Window x:Class="Przychodnia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Przychodnia"
+        xmlns:myControl="clr-namespace:MyControl;assembly=Controls"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1400" ResizeMode="NoResize">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="800" Margin="0,0,0,0" VerticalAlignment="Top" Width="400">
+            <TextBlock Grid.Column="0" Text="Miasto" FontSize="20" Margin="10,0,0,0"></TextBlock>
+            <ComboBox x:Name="cityComboBox" Grid.Column="0" HorizontalAlignment="Center" Height="60" Margin="0,30,0,0" VerticalAlignment="Top" Width="380" SelectionChanged="cityComboBox_SelectionChanged"/>
+            <TextBlock Text="Specjalizacja" FontSize="20" Margin="10,90,0,10"></TextBlock>
+            <ComboBox x:Name="specComboBox" HorizontalAlignment="Center" Height="60" Margin="0,120,0,0" VerticalAlignment="Top" Width="380" SelectionChanged="specComboBox_SelectionChanged"/>
+            <TextBlock Text="Placówka" FontSize="20" Margin="10,180,0,10"></TextBlock>
+            <ComboBox x:Name="placowkaComboBox" HorizontalAlignment="Center" Height="60" Margin="0,210,0,0" VerticalAlignment="Top" Width="380" IsEnabled="False" SelectionChanged="placowkaComboBox_SelectionChanged"/>
+            <Button x:Name="searchDoctor" Content="Wyczyść" FontSize="24" HorizontalAlignment="Left" Height="50" Margin="35,300,0,0" VerticalAlignment="Top" Width="310" Click="searchDoctor_Click"/>
+            <TextBlock Text="Dostępni lekarze" FontSize="20" Margin="10,350,0,0"></TextBlock>
+            <DataGrid x:Name="avaibleDataGrid" HorizontalAlignment="Center" Height="390" Margin="0,390,0,0" VerticalAlignment="Top" Width="380" SelectionChanged="DataGrid_SelectionChanged">
+            
+            </DataGrid>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="800" Margin="400,0,0,0" VerticalAlignment="Top" Width="400">
+            <TextBlock Text="Imię" FontSize="20" Margin="10,0,0,763"></TextBlock>
+            <TextBox x:Name="nameTextBox" FontSize="20" Height="40"  Margin="10,34,10,710" BorderBrush="Black" BorderThickness="0.9" />
+            <TextBlock Text="Nazwisko" FontSize="20" Margin="10,90,0,685"></TextBlock>
+            <TextBox x:Name="surrnameTextBox" FontSize="20" Height="40" Margin="10,120,10,640" BorderBrush="Black" BorderThickness="0.9"/>
+            <TextBlock Text="Numer telefonu" FontSize="20" Margin="10,160,0,615"></TextBlock>
+            <TextBox x:Name="phoneTextBox" FontSize="20" Height="40" Margin="10,120,10,500" BorderBrush="Black" BorderThickness="0.9" TextChanged="phoneTextBox_TextChanged"/>
+            <TextBlock Text="PESEL" FontSize="20" Margin="10,240,0,525"></TextBlock>
+            <TextBox x:Name="peselTextBox"  FontSize="20" Height="40" Margin="10,270,10,480" BorderBrush="Black" BorderThickness="0.9" TextChanged="peselTextBox_TextChanged" />
+            <TextBlock Text="ID Lekarza" FontSize="20" Margin="10,320,0,445"></TextBlock>
+            <TextBox x:Name="idLekarzTextBox"  FontSize="20" Height="40" Margin="10,360,10,400" BorderBrush="Black" BorderThickness="0.9"/>
+            <Button x:Name="saveButton" Content="Zapisz" FontSize="20" Height="40" Width="380" Margin="10,425,10,335" IsEnabled="False" Click="saveButton_Click"></Button>
+
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="800" Margin="800,0,0,0" VerticalAlignment="Top" Width="590">
+            <DataGrid x:Name="wizytyDataGrid" HorizontalAlignment="Center" Height="352" Margin="0,48,0,0" VerticalAlignment="Top" Width="570"/>
+            <Button x:Name="showButton" Content="Wyświetl wizyty" FontSize="20" Height="40" Width="380" Margin="10,425,10,335" IsEnabled="True" Click="showButton_Click">
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="PB"
+                                             Storyboard.TargetProperty="Value"
+                                             From="0" To="100" Duration="0:0:1.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <myControl:Rate Height="100" Width="500" Margin="45,640,45,53"/>
+
+
+        </Grid>
+        <Grid x:Name="loadDataGrid" Grid.ColumnSpan="2" Background="#99D7DBDF" Margin="510,332,549,278" Visibility="Hidden">
+            <StackPanel>
+                <TextBlock Text="Ładowanie Danych" Height="20"></TextBlock>
+                <ProgressBar x:Name="PB" Height="20" Width="200"
+                             Background="Black"
+                             Foreground="red"/>
+            </StackPanel>
+
+        </Grid>
+
+
+    </Grid>
+</Window>
